@@ -6,5 +6,4 @@
         unset($_SESSION['CurrentUser']);
     }
 
-    // header("Location: #");
 ?>

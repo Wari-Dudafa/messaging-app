@@ -3,7 +3,7 @@
     if(!isset($_SESSION["userData"])) {
         echo "User data is not set!";
         // Refuse access or redirect to a different page
-      } else {
+    } else {
         echo "User data is set: ";
         print_r($_SESSION["userData"]);
     }
