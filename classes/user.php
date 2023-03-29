@@ -37,5 +37,22 @@
             echo "User added";
         }
 
+        function Search($username_){
+            include_once("../connection.php");
+            $username_ = $username_.'%';
+            $result = array();
+
+            $search = $conn->prepare("SELECT * FROM Users WHERE Username LIKE :username;" );
+            $search->bindParam(':username', $username_);
+            $search->execute();
+        
+            while ($row = $search->fetch(PDO::FETCH_ASSOC)){
+                $x = array($row['UserID'], $row['Username']);
+                array_push($result, $x);
+            }
+
+            return $result;
+        }
+
     }
 ?>
