@@ -77,15 +77,14 @@
         }
 
         function ViewFriends($userid) {
-            $username = $this->GetUsername($userid);
+            $username_ = $this->GetUsername($userid);
             $name = $this->GetName($userid);
             $string = "
                 <div class='friend-profile'>
-                    <button id='friend-profile-button' value=$userid>
-                    </button>
+                    <button id='friend-profile-button' value=$userid></button>
                     <div class='friend-profile-name'>$name</div>
-                    <div class='friend-profile-username'>@$username</div>
-                    </div>
+                    <div class='friend-profile-username'>@$username_</div>
+                </div>
             ";
 
             return $string;

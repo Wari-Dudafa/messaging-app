@@ -1,29 +1,68 @@
+:root {
+    --bg: #2B4162;
+    --bgs: #2B4162;
+    --bgl: #2B4162;
+
+    --col1: #385F71;
+    --col1s: #315363;
+    --col1l: #437085;
+
+    --col2: #5C0029;
+    --col2s: #5C0029;
+    --col2l: #6a0231;
+
+    --col3: #CFCFEA;
+    --col3s: #CFCFEA;
+    --col3l: #CFCFEA;
+    
+    --col4: #A89B9D;
+    --col4s: #978b8d;
+    --col4l: #bdadaf;
+}
+  
 body {
     padding: 0%;
     margin: 0%;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: var(--bg);
 }
 
 .nav-bar-container {
     padding: 0%;
     margin: 0%;
-    background-color: aqua;
 }
 
 .chat-container {
     padding: 0%;
     margin: 0%;
     height: 100%;
-    background-color: blueviolet;
+    background-color: var(--bg);
 }
 
 .friends-container {
     width: 100%;
-    background-color: brown;
+    background-color: var(--col3);
     position: absolute;
     bottom: 0px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 10px;
+    border-radius: 10px;
+}
+
+.scroll-container{
+    overflow: auto;
+    white-space: nowrap;
+    border-radius: 10px;
+    padding-left: 100px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
 }
 
 #friend-profile-button{
@@ -37,7 +76,7 @@ body {
     padding: 10px;
     margin-right: 5px;
     display: inline-block;
-    background-color: bisque;
+    background-color: var(--col4);
     border-radius: 10px;
     box-shadow: inset;
     -webkit-user-select: none;
@@ -47,7 +86,7 @@ body {
 }
 
 .friend-profile:hover{
-    background-color: rgb(249, 205, 152);
+    background-color: var(--col4s);
 }
 
 .friend-profile-name{
@@ -63,5 +102,21 @@ body {
     border: none;
     height: 75px;
     width: 75px;
-    background-color: brown;
+    background-color: var(--col3);
+}
+
+#user-profile{
+    background-color: var(--col1);
+    position: absolute;
+    color: rgb(218, 218, 218);
+}
+
+#user-profile:hover{
+    background-color: var(--col1s);
+}
+
+.logout {
+    position: absolute;
+    top: 15px;
+    right: 0.8%;
 }
