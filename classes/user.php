@@ -16,13 +16,14 @@
                 if($name == $row['Name']) {
                     $_SESSION["userData"] = array($row['UserID'], $row['Name'], $row['Username']);
                     // Access granted
+                    $conn = null;
                     return true; 
                 } else {
                     //Access denied
+                    $conn = null;
                     return false;
                 }
             }
-            $conn=null;
         }
 
         function SignUp($name, $username_){
@@ -33,7 +34,7 @@
             $signup->bindParam(':name', $name);
             $signup->bindParam(':username', $username_);
             $signup->execute();
-            $conn=null;
+            $conn = null;
             echo "User added";
         }
 
@@ -51,8 +52,28 @@
                 array_push($result, $x);
             }
 
+            $conn = null;
             return $result;
         }
 
+        function GetFriends($userid){
+            include_once("../connection.php");
+            $friends = array();
+
+            $getFriends = $conn->prepare("SELECT * FROM Friends WHERE FriendID1 = :userid OR FriendID2 = :userid;" );
+            $getFriends->bindParam(':userid', $userid);
+            $getFriends->execute();
+        
+            while ($row = $getFriends->fetch(PDO::FETCH_ASSOC)){
+                foreach ($row as $i) {
+                    if ($i != $userid){
+                        array_push($friends, $i);
+                    }
+                }
+            }
+
+            return $friends;
+        }
     }
+
 ?>

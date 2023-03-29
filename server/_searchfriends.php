@@ -5,20 +5,20 @@
     include_once("../classes/user.php");
     $search = new User;
     $result = $search->Search($username);
-    foreach ($result as $x) {
-        $y = $x[1];
+    foreach ($result as $i) {
+        $ii = $i[1];
 
-        if ($x[0] == $_SESSION["userData"][0]){
+        if ($i[0] == $_SESSION["userData"][0]){
             echo "
                 <div class='add-friend-container'>
-                    @$y <button>Me...</button>
+                    @$ii <button>Me...</button>
                 </div>
             ";
 
         } else {
             echo "
                 <div class='add-friend-container'>
-                    @$y <button>Add</button>
+                    @$ii <button>Add</button>
                 </div>
             ";
         }

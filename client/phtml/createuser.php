@@ -14,15 +14,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login/Signup</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../src/js.js"></script>
 </head>
 <body>
-    <?php // Navbar
-        include_once("../../classes/navbar.php");
-        $navbar = new NavBar();
-        $navbar = $navbar->ShowNavbar();
-        echo $navbar;
-    ?>
     
     <div class="signup-form">
         <h1>Sign up</h1>
