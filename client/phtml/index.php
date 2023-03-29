@@ -19,6 +19,7 @@
     <script src="../src/js.js"></script>
 </head>
 <body>
+
     <div class="nav-bar-container">
         <div class="add-friends">
             <input type="text" name="search" id="friendSearchInput" value="" onkeyup="Search(this.value)">
@@ -38,10 +39,9 @@
 
     <div class="friends-container">
         <?php
-            include("../classes/user.php");
+            include_once("../../classes/user.php");
 
             $number = $_SESSION["userData"][0];
-            echo $number;
             $getfriends = new User;
             $friends = $getfriends->GetFriends($number);
             print_r($friends);

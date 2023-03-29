@@ -57,7 +57,8 @@
         }
 
         function GetFriends($userid){
-            include_once("../connection.php");
+            //include_once("../connection.php");
+            include $_SERVER["DOCUMENT_ROOT"]."/messaging-app/connection.php";
             $friends = array();
 
             $getFriends = $conn->prepare("SELECT * FROM Friends WHERE FriendID1 = :userid OR FriendID2 = :userid;" );
@@ -75,5 +76,4 @@
             return $friends;
         }
     }
-
 ?>
