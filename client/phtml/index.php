@@ -44,7 +44,9 @@
             $number = $_SESSION["userData"][0];
             $getfriends = new User;
             $friends = $getfriends->GetFriends($number);
-            print_r($friends);
+            foreach ($friends as $i){
+                echo $getfriends->ViewFriends($i);
+            }
         ?>
     </div>
 

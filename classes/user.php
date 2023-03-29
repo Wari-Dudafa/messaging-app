@@ -75,5 +75,46 @@
 
             return $friends;
         }
+
+        function ViewFriends($userid) {
+            $username = $this->GetUsername($userid);
+            $name = $this->GetName($userid);
+            $string = "
+                <div class='friend-profile'>
+                    <button value=$userid >
+                        <div class='friend-profile-name'>$name</div>
+                        <div class='friend-profile-username'>@$username</div>
+                    </button>
+                </div>
+            ";
+
+            return $string;
+        }
+
+        function GetUsername($userid){
+            include $_SERVER["DOCUMENT_ROOT"]."/messaging-app/connection.php";
+
+            // Find where the email matches what already exists in the database
+            $getUsername = $conn->prepare("SELECT Username FROM Users WHERE UserID = :userid;" );
+            $getUsername->bindParam(':userid', $userid);
+            $getUsername->execute();
+        
+            while ($row = $getUsername->fetch(PDO::FETCH_ASSOC)) {
+                return $row['Username'];
+            } 
+        }
+
+        function GetName($userid){
+            include $_SERVER["DOCUMENT_ROOT"]."/messaging-app/connection.php";
+
+            // Find where the email matches what already exists in the database
+            $getUsername = $conn->prepare("SELECT Name FROM Users WHERE UserID = :userid;" );
+            $getUsername->bindParam(':userid', $userid);
+            $getUsername->execute();
+        
+            while ($row = $getUsername->fetch(PDO::FETCH_ASSOC)) {
+                return $row['Name'];
+            } 
+        }
     }
 ?>
