@@ -3,9 +3,6 @@
     if(!isset($_SESSION["userData"])) {
         echo "User data is not set!";
         // Refuse access or redirect to a different page
-    } else {
-        echo "User data is set: ";
-        print_r($_SESSION["userData"]);
     }
 ?>
 <!DOCTYPE html>
@@ -17,6 +14,15 @@
     <title>Login/Signup</title>
     <link rel="stylesheet" href="../../style.css">
     <script src="../src/js.js"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     
@@ -38,5 +44,6 @@
         </form>
     </div>
 
+    
 </body>
 </html>

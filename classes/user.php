@@ -81,11 +81,11 @@
             $name = $this->GetName($userid);
             $string = "
                 <div class='friend-profile'>
-                    <button value=$userid >
-                        <div class='friend-profile-name'>$name</div>
-                        <div class='friend-profile-username'>@$username</div>
+                    <button id='friend-profile-button' value=$userid>
                     </button>
-                </div>
+                    <div class='friend-profile-name'>$name</div>
+                    <div class='friend-profile-username'>@$username</div>
+                    </div>
             ";
 
             return $string;

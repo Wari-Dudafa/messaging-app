@@ -3,9 +3,6 @@
     if(!isset($_SESSION["userData"])) {
         header("Location:createuser.php");
         // Refuse access or redirect to a different page
-    } else {
-        echo "User data is set: ";
-        print_r($_SESSION["userData"]);
     }
 ?>
 <!DOCTYPE html>
@@ -17,6 +14,15 @@
     <title>MessagingApp</title>
     <link rel="stylesheet" href="../../style.css">
     <script src="../src/js.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -25,12 +31,16 @@
             <input type="text" name="search" id="friendSearchInput" value="" onkeyup="Search(this.value)">
     
             <div class="search-results-continer">
-                <p>People: <span id="searchResults"></span></p>
+                <p><span id="searchResults"></span></p>
             </div>
         </div>
+        <div class="profile-picture"></div>
     </div>    
 
     <div class="chat-container">
+        <div class="messages-container">
+
+        </div>
         <div class="send-message">
             <input type="text" name="message" id="messageInput" value="">
             <button onclick="SendMessage()">Send</button>

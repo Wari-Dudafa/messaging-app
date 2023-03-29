@@ -2,3 +2,66 @@ body {
     padding: 0%;
     margin: 0%;
 }
+
+.nav-bar-container {
+    padding: 0%;
+    margin: 0%;
+    background-color: aqua;
+}
+
+.chat-container {
+    padding: 0%;
+    margin: 0%;
+    height: 100%;
+    background-color: blueviolet;
+}
+
+.friends-container {
+    width: 100%;
+    background-color: brown;
+    position: absolute;
+    bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+
+#friend-profile-button{
+    border-radius: 100px;
+    border: none;
+    height: 75px;
+    width: 75px;
+}
+
+.friend-profile{
+    padding: 10px;
+    margin-right: 5px;
+    display: inline-block;
+    background-color: bisque;
+    border-radius: 10px;
+    box-shadow: inset;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition-duration: 0.5s;
+}
+
+.friend-profile:hover{
+    background-color: rgb(249, 205, 152);
+}
+
+.friend-profile-name{
+    font-size: large;
+}
+
+.friend-profile-username{
+    font-size: small;
+}
+
+.profile-picture{
+    border-radius: 100px;
+    border: none;
+    height: 75px;
+    width: 75px;
+    background-color: brown;
+}
