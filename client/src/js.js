@@ -1,3 +1,15 @@
+function ShowItem(itemName) {
+    console.log(itemName);
+    var item = document.getElementById(itemName);
+    item.display = 'block';
+}
+
+function HideItem(itemName) {
+    console.log(itemName);
+    var item = document.getElementById(itemName);
+    item.display = 'none';
+}
+
 function SendMessage() {
 
     var message = document.getElementById("messageInput").value;

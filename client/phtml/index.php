@@ -56,13 +56,13 @@
             </div>
             
             <div class="logout">
-                <button>Logout</button>
+                <button onclick="ShowItem('confirm-logout')">Logout</button>
 
-                <!-- <div class="confirm-logout">
+                <div id="confirm-logout" class="confirm-logout">
                     <p>Are you sure you want to log out?<span id="confirm-logout-output"></span></p>
                     <button><span class="glyphicon glyphicon-ok"></span></button>
-                    <button><span class="glyphicon glyphicon-remove"></span></button>
-                </div> -->
+                    <button onclick="HideItem('confirm-logout')"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
             </div>
         </div>
         
