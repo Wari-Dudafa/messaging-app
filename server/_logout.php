@@ -1,9 +1,8 @@
 <?php
-    session_start();
-
     // If The variable is not empty then empty it 
-    if(isset($_SESSION['CurrentUser'])) {
-        unset($_SESSION['CurrentUser']);
+    session_start();
+    if(isset($_SESSION['userData'])) {
+        unset($_SESSION['userData']);
+        header("Location:../client/phtml/createuser.php");
     }
-
 ?>

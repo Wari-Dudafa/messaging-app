@@ -81,7 +81,7 @@
             $name = $this->GetName($userid);
             $string = "
                 <div class='friend-profile'>
-                    <button id='friend-profile-button' value=$userid></button>
+                    <button id='friend-profile-button' onclick='OpenMessages($userid)' value=$userid></button>
                     <div class='friend-profile-name'>$name</div>
                     <div class='friend-profile-username'>@$username_</div>
                 </div>

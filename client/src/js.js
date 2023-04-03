@@ -1,24 +1,32 @@
 function ShowItem(itemName) {
     console.log(itemName);
-    var item = document.getElementById(itemName);
-    item.display = 'block';
+    document.getElementById(itemName).style.display = 'block'
 }
 
 function HideItem(itemName) {
     console.log(itemName);
-    var item = document.getElementById(itemName);
-    item.display = 'none';
+    document.getElementById(itemName).style.display = 'none'
 }
 
 function SendMessage() {
-
     var message = document.getElementById("messageInput").value;
     document.getElementById("messageInput").value = "";
     console.log(message);
+
+    if (message.length > 0 ){
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("temp-chat-shower").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "../../server/_sendmessage.php?message=" + message, true);
+        xmlhttp.send();
+    }
 }
 
 function Search(username) {
-
     console.log(username);
 
     if (username == ""){
@@ -36,4 +44,28 @@ function Search(username) {
         xmlhttp.send();
     }
     
+}
+
+function OpenMessages(userid){
+    console.log(userid);
+    ShowItem('send-message');
+    HideItem('opening-messsage');
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("messages-container").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "../../server/_openmessages.php?userid=" + userid, true);
+    xmlhttp.send();
+}
+
+function RefreshChat(){
+
+}
+
+function AddFriend(sender, reciever){
+    console.log(sender);
+    console.log(reciever);
 }

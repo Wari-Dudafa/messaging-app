@@ -27,10 +27,17 @@
 <body>
 
     <div class="chat-container">
-        <div class="messages-container">
+        <div id="opening-messsage" class="opening-messsage">
+            <p1>Click on a friend to begin chatting</p1>
+        </div>
+
+        <div id="messages-container" class="messages-container">
 
         </div>
-        <div class="send-message">
+
+        <div id="temp-chat-shower"></div>
+
+        <div id='send-message' class="send-message">
             <input type="text" name="message" id="messageInput" value="">
             <button onclick="SendMessage()">Send</button>
         </div>
@@ -60,7 +67,10 @@
 
                 <div id="confirm-logout" class="confirm-logout">
                     <p>Are you sure you want to log out?<span id="confirm-logout-output"></span></p>
-                    <button><span class="glyphicon glyphicon-ok"></span></button>
+                    <form action="../../server/_logout.php">
+                        <button type='submit'><span class="glyphicon glyphicon-ok"></span></button>
+                    </form>
+
                     <button onclick="HideItem('confirm-logout')"><span class="glyphicon glyphicon-remove"></span></button>
                 </div>
             </div>
@@ -69,10 +79,11 @@
         <div class='friend-profile' id="user-profile">
             <button id='friend-profile-button'></button>
             <div class='friend-profile-name'>
-            <?php echo $_SESSION["userData"][1]?>
+                <?php // echo $_SESSION["userData"][1]?>
+                <p1>Me</p1>
             </div>
             <div class='friend-profile-username'>
-            <?php echo "@".$_SESSION["userData"][2]?>
+                <?php echo "@".$_SESSION["userData"][2]?>
             </div>
         </div>
 

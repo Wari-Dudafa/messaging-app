@@ -16,9 +16,11 @@
             ";
 
         } else {
+            $sender = $_SESSION["userData"][0];
+            $reciever = $i[0];
             echo "
                 <div class='add-friend-container'>
-                    @$ii <button>Add</button>
+                    @$ii <button onclick='AddFriend($sender, $reciever)'>Add</button>
                 </div>
             ";
         }

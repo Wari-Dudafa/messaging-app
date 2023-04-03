@@ -120,3 +120,11 @@ body {
     top: 15px;
     right: 0.8%;
 }
+
+.confirm-logout {
+    display: none;
+}
+
+.send-message {
+    display: none;
+}
