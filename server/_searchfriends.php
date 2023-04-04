@@ -11,7 +11,7 @@
         if ($i[0] == $_SESSION["userData"][0]){
             echo "
                 <div class='add-friend-container'>
-                    @$ii <button>Me...</button>
+                    @$ii
                 </div>
             ";
 

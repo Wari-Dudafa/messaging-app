@@ -45,7 +45,7 @@ body {
     width: 100%;
     background-color: var(--col3);
     position: absolute;
-    bottom: 0px;
+    bottom: -10px;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 10px;
