@@ -49,7 +49,6 @@ function Search(username) {
 function OpenMessages(userid){
     console.log(userid);
     ShowItem('send-message');
-    HideItem('opening-messsage');
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -59,6 +58,15 @@ function OpenMessages(userid){
     };
     xmlhttp.open("GET", "../../server/_openmessages.php?userid=" + userid, true);
     xmlhttp.send();
+
+    var xmlhttp2 = new XMLHttpRequest();
+    xmlhttp2.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("opening-messsage").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp2.open("GET", "../../server/_getname.php?userid=" + userid, true);
+    xmlhttp2.send();
 }
 
 function RefreshChat(){
