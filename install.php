@@ -5,7 +5,8 @@
 
     $Chats = $conn->prepare("DROP TABLE IF EXISTS Chats;
     CREATE TABLE Chats 
-    (SenderID INT(6) NOT NULL,
+    (ChatID INT(6) NOT NULL,
+    SenderID INT(6) NOT NULL,
     RecieverID INT(6) NOT NULL,
     Message VARCHAR(300) NOT NULL,
     Time VARCHAR(300) NOT NULL)");
